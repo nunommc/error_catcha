@@ -1,6 +1,9 @@
 # require 'action_controller/status_codes' unless defined? ::ActionController::StatusCodes
 
 class ApplicationController < ActionController::Base
+
+  add_flash_types :success, :error unless defined? ::Bootstrap
+
   def not_found
     render_error(:not_found)
   end
